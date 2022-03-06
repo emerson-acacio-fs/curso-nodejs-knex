@@ -1,0 +1,12 @@
+{
+  "name": "curso-nodejs-knex",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/emerson-acacio-fs/curso-nodejs-knex.git",
+  "author": "emerson_acacio@lccv.ufal.br <emerson_acacio@lccv.ufal.br>",
+  "license": "MIT",
+  "dependencies": {
+    "knex": "^1.0.3",
+    "mysql2": "^2.3.3"
+  }
+}

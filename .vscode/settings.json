@@ -1,0 +1,49 @@
+{
+  "git.ignoreLimitWarning": true,
+  "editor.formatOnSave": true,
+  "editor.fontSize": 18,
+  "auto-rename-tag.activationOnLanguage": ["html", "xml", "php", "javascript"],
+  "javascript.suggest.autoImports": true,
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "connectString": "postgres://usbwbd_integrispan:postgrespassword@localhost:5432/sbwbd",
+      "driver": "PostgreSQL",
+      "name": "IntegriSpan"
+    }
+  ],
+  "cSpell.words": [
+    "CHOKIDAR",
+    "Cascader",
+    "INTEGRIDUTOS",
+    "Inps",
+    "Inpusts",
+    "Integri",
+    "Integridutos",
+    "USEPOLLING",
+    "WEVERTONM",
+    "antd",
+    "dgraph",
+    "dind",
+    "gitlab",
+    "grahpql",
+    "hasura",
+    "integrispan",
+    "postgres",
+    "rrdls",
+    "subweb"
+  ],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    }
+  },
+  "[typescriptreact]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true,
+      "source.organizeImports": true
+    }
+  }
+}
