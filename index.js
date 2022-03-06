@@ -120,11 +120,72 @@ const database = require("./database");
 //   })
 //   .catch((err) => console.log(err));
 
-database
-  .select(["games.*", "estudio.nome as estudio_nome"])
-  .table("games")
-  .innerJoin("estudio", "estudio.game_id", "games.id")
-  .then((data) => {
-    console.log(data);
-  })
-  .catch((err) => console.log(err));
+// database
+//   .select(["games.*", "estudio.nome as estudio_nome"])
+//   .table("games")
+//   .innerJoin("estudio", "estudio.game_id", "games.id")
+//   .then((data) => {
+//     console.log(data);
+//   })
+//   .catch((err) => console.log(err));
+
+// database
+//   .select(["games.*", "estudio.nome as estudio_nome"])
+//   .table("games")
+//   .innerJoin("estudio", "estudio.game_id", "games.id")
+//   .then((data) => {
+//     console.log(data);
+//   })
+//   .catch((err) => console.log(err));
+
+// database
+//   .select([
+//     "games.*",
+//     "estudio.nome as estudio_nome",
+//     "estudio.id as estudio_id",
+//   ])
+//   .table("games")
+//   .innerJoin("estudio", "estudio.game_id", "games.id")
+//   .where("games.id", 5)
+//   .then((data) => {
+//     console.log(data);
+//   })
+//   .catch((err) => console.log(err));
+
+// database
+//   .select(["games.*", "estudio.nome as estudio_nome"])
+//   .table("games")
+//   .leftJoin("estudio", "estudio.game_id", "games.id")
+//   .then((data) => {
+//     console.log(data);
+//   })
+//   .catch((err) => console.log(err));
+
+// database
+//   .select([
+//     "games.*",
+//     "estudio.nome as estudio_nome",
+//     "estudio.id as estudio_id",
+//   ])
+//   .table("games_estudios")
+//   .innerJoin("games", "games.id", "games_estudios.game_id")
+//   .innerJoin("estudio", "estudio.id", "games_estudios.estudio_id")
+//   .where("games.id", 10)
+//   .then((data) => {
+//     console.log(data);
+//   })
+//   .catch((err) => console.log(err));
+
+async function testeTransation() {
+  try {
+    await database.transaction(async (trans) => {
+      await database.insert({ nome: "4" }).table("estudio");
+      await database.insert({ nome: "5" }).table("estudio");
+      await database.insert({ nome: "6", preco: 55.2 }).table("games");
+    });
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+testeTransation();
